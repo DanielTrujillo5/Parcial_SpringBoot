@@ -29,7 +29,7 @@ public class CourseServiceImpl implements CourseService {
         c.setDescription(request.getDescription());
         c.setCredits(request.getCredits());
 
-        Course saved = repository.save(c);
+        Course saved = repository.save(c); //aqui save
 
         return toResponse(saved);
     }
