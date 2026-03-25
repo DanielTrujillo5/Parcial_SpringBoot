@@ -1,4 +1,5 @@
 package com.academy.academy_dt.entity;
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -13,12 +14,15 @@ public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
-    @Column(nullable = false)
+    @Column(name = "name", nullable = false, length = 120)
     private String name;
 
+    @Column(name = "description", length = 500)
     private String description;
 
+    @Column(name = "credits", nullable = false)
     private Integer credits;
 }
