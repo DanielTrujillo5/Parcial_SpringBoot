@@ -1,5 +1,3 @@
-
-
 package com.academy.academy_dt.entity;
 
 import jakarta.persistence.*;
@@ -21,11 +19,13 @@ public class Course {
     @Column(nullable = false)
     private Integer credits;
 
-    // Constructor vacío
+    @ManyToOne
+    @JoinColumn(name = "instructor_id")
+    private Instructor instructor;
+
     public Course() {
     }
 
-    // Constructor con parámetros
     public Course(Long id, String name, String description, Integer credits) {
         this.id = id;
         this.name = name;
@@ -33,39 +33,43 @@ public class Course {
         this.credits = credits;
     }
 
-    // Getter y Setter de id
     public Long getId() {
         return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Integer getCredits() {
+        return credits;
+    }
+
+    public Instructor getInstructor() {
+        return instructor;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    // Getter y Setter de name
-    public String getName() {
-        return name;
-    }
-
     public void setName(String name) {
         this.name = name;
-    }
-
-    // Getter y Setter de description
-    public String getDescription() {
-        return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
 
-    // Getter y Setter de credits
-    public Integer getCredits() {
-        return credits;
-    }
-
     public void setCredits(Integer credits) {
         this.credits = credits;
+    }
+
+    public void setInstructor(Instructor instructor) {
+        this.instructor = instructor;
     }
 }

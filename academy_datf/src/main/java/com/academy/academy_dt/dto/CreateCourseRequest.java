@@ -16,27 +16,37 @@ public class CreateCourseRequest {
     @NotNull(message = "credits is required")
     private Integer credits;
 
+    private Long instructorId;
+
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public Integer getCredits() {
         return credits;
     }
 
+    public Long getInstructorId() {
+        return instructorId;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public void setCredits(Integer credits) {
         this.credits = credits;
+    }
+
+    public void setInstructorId(Long instructorId) {
+        this.instructorId = instructorId;
     }
 }
